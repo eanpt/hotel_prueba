@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas de Hotel</title>
+    <link rel="stylesheet" href="css/Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="inicio.html" class="cta-button">Inicio</a></li>
+                <li><a href="#destinos"class="cta-button">Destinos</a></li>
+                <li><a href="Resevas.html"class="cta-button">Ir a las Reservas</a></li>
+                <li><a href="IndexReservas.html"class="cta-button">Reservas</a></li>
+            </ul>
+        </nav>
+    </header><br>
+    <!-- Formulario para Reservar -->
+    <div id="reservation-form">
+        <h2>Bienvenido a nuestro portal de reservas </h2>
+        <h2>Has tu reserva aqui!</h2>
+        <label for="guestName">Nombre:</label>
+        <input type="text" id="guestName" required>
+           
+        <label for="country">Seleccione País:</label>
+        <select id="country" onchange="updateCities()" required>
+            <option value="">Escoja un país</option>
+            <option value="colombia">Colombia</option>
+            <option value="peru">Perú</option>
+        </select>
+
+        <label for="city">Ciudad:</label>
+        <select id="city" required disabled>
+            <option value="">Seleccione una ciudad</option>
+        </select>
+
+        <label for="roomNumber">Número de Habitación:</label>
+        <input class="hab" type="number" id="roomNumber" required>
+        
+        <label for="reservationDate">Fecha de Reserva:</label>
+        <input type="date" id="reservationDate" required>
+
+       
+
+        
+        
+        <button onclick="makeReservation()">Reservar</button>
+    </div>
+    <a href="Resevas.html">Ver todas las reservas</a>
+
+  
+
+    <script src="js/Script.js"></script>
+</body>
+</html>
