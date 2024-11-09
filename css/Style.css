@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+
+}
+
+h1,
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+#reservation-form,
+#reservation-list {
+    width: 300px;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input,
+button {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#reservations {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    border: 1px solid #333;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Estilos para la tabla de reservas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    /* Cambiar el color de fondo al pasar el mouse */
+}
+
+button {
+    background-color: #f44336;
+    /* Color rojo para el botón de cancelar */
+}
+
+button:hover {
+    background-color: #d32f2f;
+    /* Color rojo más oscuro al pasar el mouse */
+}
+
+    .hab {
+        width: 90px; /* Ajusta el ancho según sea necesario */
+        font-size: 12px; /* Ajusta el tamaño de fuente según sea necesario */
+   
+
+}
+header {
+    background: rgba(0, 51, 102, 0.8);
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}

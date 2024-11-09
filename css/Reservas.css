@@ -1,0 +1,98 @@
+/* Estilos generales para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Color de fondo suave */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Estilos para el encabezado */
+h1 {
+    margin-top: 50px; /* Ajusta el valor según lo que necesites */
+}
+.hero h1 {
+    color: #333;
+        margin-top: 20px; /* Ajusta el valor según lo que necesites */
+}
+
+/* Estilos para la tabla de reservas */
+table {
+    width: 80%; /* Ancho de la tabla */
+    border-collapse: collapse; /* Colapsar bordes */
+    margin-top: 20px; /* Espacio superior */
+    background-color: white; /* Fondo blanco para la tabla */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para la tabla */
+}
+
+/* Estilos para las celdas de encabezado y datos */
+th, td {
+    border: 1px solid #ddd; /* Bordes de las celdas */
+    padding: 12px; /* Espaciado interno */
+    text-align: left; /* Alineación a la izquierda */
+}
+
+/* Estilo para las celdas de encabezado */
+th {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color de texto blanco */
+}
+
+/* Efecto hover en las filas de la tabla */
+tr:hover {
+    background-color: #f1f1f1; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilo para el botón de cancelar */
+button {
+    background-color: #f44336; /* Color rojo para el botón */
+    color: white; /* Color de texto blanco */
+    border: none; /* Sin borde */
+    padding: 8px 12px; /* Espaciado interno */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+button:hover {
+    background-color: #d32f2f; /* Color rojo más oscuro al pasar el mouse */
+}
+
+/* Estilo para el enlace de volver a reservar */
+a {
+    margin-top: 20px; /* Margen superior */
+    padding: 20px 35px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color de texto blanco */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+a:hover {
+    background-color: #45a049; /* Color verde más oscuro al pasar el mouse */
+}
+header {
+    background: rgba(0, 51, 102, 0.8);
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
