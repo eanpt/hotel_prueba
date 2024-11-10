@@ -7,6 +7,8 @@
 body {
     font-family: Arial, sans-serif;
     color: #333;
+    background: linear-gradient(hsl(186, 76%, 16%), hsl(223, 90%, 60%), hsl(240, 56%, 42%));
+  box-shadow: 0 0 20px 0 hsla(223, 59%, 31%, 0.8)
 }
 
 header {
@@ -54,17 +56,17 @@ nav ul li a {
     margin-bottom: 2rem;
 }
 
-.cta-button {
+.miBoton {
     background: #0066cc;
     color: #fff;
     padding: 0.8rem 1.5rem;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 20px;
     font-weight: bold;
     transition: background 0.3s;
 }
 
-.cta-button:hover {
+.miBoton:hover {
     background: #0101ff;
 }
 
@@ -84,7 +86,7 @@ article {
     background: #f4f4f4;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 footer {
