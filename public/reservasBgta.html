@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Reserva de Hotel</title>
+    <link rel="stylesheet" href="reservas.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hotel la Calera , Bogota</h1>
+        <form action="/reservar" method="POST" id="reservaForm">
+            <label for="numeroHabitacion">Número de Habitación:</label>
+            <input type="number" id="numeroHabitacion" name="numeroHabitacion" min="1" required placeholder="Ingrese el número de habitación">
+
+            <label for="fechaInicio">Fecha de Inicio:</label>
+            <input type="date" id="fechaInicio" name="fechaInicio" required>
+
+            <label for="fechaFin">Fecha de Fin:</label>
+            <input type="date" id="fechaFin" name="fechaFin" required>
+
+            <button type="submit">Reservar</button>
+        </form>
+        <a href="index.html" class="button-link">Opciones</a>
+        <a href="reservasCali.html" class="button-link">Cali</a>
+        <a href="reservasMedellin.html" class="button-link">Medellin</a>
+    </div>
+</body>
+</html>
