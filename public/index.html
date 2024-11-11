@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login_Register</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <main>
         <div class="all">
@@ -44,12 +47,13 @@
         </div>
     </main>
     <script src="/js/script.js"></script>
+    <script src="./public/js/express-auth-frontend-js.js"></script>
     <script>
-        
+
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(e.target);
-            
+
             try {
                 const response = await fetch('/auth/login', {
                     method: 'POST',
@@ -63,6 +67,7 @@
                 });
 
                 const data = await response.json();
+
                 if (data.success) {
                     window.location.href = data.redirect;
                 } else {
@@ -73,6 +78,44 @@
                 alert('Error al intentar iniciar sesión');
             }
         });
+
+        // Manejo del formulario de registro
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+
+            try {
+                const response = await fetch('/auth/registro', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        nombre_completo: formData.get('nombre_completo'),
+                        correo: formData.get('correo'),
+                        cedula: formData.get('cedula'),
+                        password: formData.get('password')
+                    })
+                });
+
+                const data = await response.json();
+                alert(data.message);
+
+                if (data.success) {
+                    window.location.href = '/';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al intentar registrar usuario');
+            }
+
+            // Botones de cambio entre login y registro (mantén tu lógica original aquí)
+            const btnLogin = document.getElementById('btn_login');
+            const btnRegister = document.getElementById('btn_register');
+            // ... resto de tu código de UI para alternar entre formularios
+        });
+
     </script>
 </body>
+
 </html>
