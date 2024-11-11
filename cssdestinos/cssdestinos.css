@@ -101,3 +101,72 @@ body {
     }
 }
 
+
+.carousel {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: auto; 
+  
+}
+
+.slides img {
+    width: 100%;
+    display: none;
+    margin: auto;
+
+}
+
+.slides img.active {
+    display: block;
+    
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color:  white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.container {
+    text-align: center;
+    font-size: large;
+    
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: rgba(0, 51, 102, 0.8);
+    color: white; /* Texto blanco */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px;
+    cursor: pointer; /* El puntero se convierte en mano */
+    transition: background-color 0.3s; /* Efecto al pasar el ratón */
+    margin-right: 50px;
+  }
+
+  button:hover {
+    background-color: #b3c3f4; /* Color cuando el mouse pasa sobre el botón */
+}
+
+.gmap_canvas{
+    overflow: hidden;
+    text-align: center;
+}
+.mapouter{
+position: relative;
+text-align: right;
+text-align: center;
+}
+
