@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login_Register</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="all">
+            <div class="backbox">
+                <div class="backbox_login">
+                    <h3>¿Ya tiene una cuenta?</h3>
+                    <p>Inicia sesion para entrar a la página</p>
+                    <button id="btn_login">Iniciar sesión</button>
+                </div>
+
+                <div class="backbox_register">
+                    <h3>¿Aun no tienes una cuenta?</h3>
+                    <p>Registrate para que puedas iniciar sesión</p>
+                    <button id="btn_register">Registrarse</button>
+                </div>
+            </div>
+
+            <div class="login_register">
+                <form id="loginForm" class="login">
+                    <h2>Iniciar sesión</h2>
+                    <input type="text" placeholder="Correo electronico" name="correo">
+                    <input type="password" placeholder="Contraseña" name="password">
+                    <button type="submit">Entrar</button>
+                </form>
+
+                <form id="registerForm" class="register">
+                    <h2>Registarse</h2>
+                    <input type="text" placeholder="Nombre Completo" name="nombre_completo">
+                    <input type="text" placeholder="Correo electronico" name="correo">
+                    <input type="number" placeholder="Cedula" name="cedula">
+                    <input type="password" placeholder="Contraseña" name="password">
+                    <button type="submit">Registarse</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="/js/script.js"></script>
+    <script src="./public/js/express-auth-frontend-js.js"></script>
+    <script>
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+
+            try {
+                const response = await fetch('/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        correo: formData.get('correo'),
+                        password: formData.get('password')
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    window.location.href = data.redirect;
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al intentar iniciar sesión');
+            }
+        });
+
+        // Manejo del formulario de registro
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+
+            try {
+                const response = await fetch('/auth/registro', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        nombre_completo: formData.get('nombre_completo'),
+                        correo: formData.get('correo'),
+                        cedula: formData.get('cedula'),
+                        password: formData.get('password')
+                    })
+                });
+
+                const data = await response.json();
+                alert(data.message);
+
+                if (data.success) {
+                    window.location.href = '/';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al intentar registrar usuario');
+            }
+
+            // Botones de cambio entre login y registro (mantén tu lógica original aquí)
+            const btnLogin = document.getElementById('btn_login');
+            const btnRegister = document.getElementById('btn_register');
+            // ... resto de tu código de UI para alternar entre formularios
+        });
+
+    </script>
+</body>
+
+</html>
