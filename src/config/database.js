@@ -1,10 +1,10 @@
 const mysql = require('mysql2');
 
 const db = mysql.createConnection({
-    host: process.env.DB_HOST || '34.31.89.249',
+    host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || '1234567890',
-    database: process.env.DB_NAME || 'hotel_test'
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'node_mysql_crud_db'
 });
 
 // Conectar a la base de datos
