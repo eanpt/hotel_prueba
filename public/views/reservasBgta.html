@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservas - Hotel La Calera</title>
+    <link rel="stylesheet" href="../css/reservas.css" />
+    <style>
+      nav {
+        background-color: #251ac4;
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+
+      nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .content {
+        margin-top: 80px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      button {
+        background-color: #251ac4;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 15px;
+      }
+
+      button:hover {
+        background-color: #1c1498;
+      }
+
+      .links {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .button-link {
+        display: inline-block;
+        padding: 8px 16px;
+        margin: 0 5px;
+        background-color: #251ac4;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+
+      .button-link:hover {
+        background-color: #1c1498;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/bienvenida">Inicio</a></li>
+        <li><a href="/reservas-bogota">Bogotá</a></li>
+        <li><a href="/reservas-cali">Cali</a></li>
+        <li><a href="/reservas-medellin">Medellín</a></li>
+        <li><a href="/auth/logout">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <div class="container">
+        <h1>Hotel La Calera - Bogotá</h1>
+
+        <form id="reservationForm">
+          <div class="form-group">
+            <label for="room">Número de Habitación:</label>
+            <input type="number" id="room" required min="1" max="100" />
+          </div>
+
+          <div class="form-group">
+            <label for="startDate">Fecha de Inicio:</label>
+            <input type="date" id="startDate" required />
+          </div>
+
+          <div class="form-group">
+            <label for="endDate">Fecha de Fin:</label>
+            <input type="date" id="endDate" required />
+          </div>
+
+          <button type="submit">Reservar</button>
+        </form>
+
+        <div class="links">
+          <a href="/bienvenida" class="button-link">Volver a Inicio</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Establecer fecha mínima como hoy para las fechas
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("startDate").min = today;
+      document.getElementById("endDate").min = today;
+
+      // Manejar el envío del formulario
+      document
+        .getElementById("reservationForm")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          // Aquí puedes agregar la lógica para procesar la reserva
+          alert("Funcionalidad de reserva en desarrollo");
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenido - Hotel de Muestra</title>
+    <link rel="stylesheet" href="/css/carrucel.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    />
+    <style>
+      nav {
+        background-color: #251ac4;
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li {
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+      }
+
+      nav a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .promo-button {
+        background-color: #ff4757;
+        padding: 0.8rem 1.5rem;
+        border-radius: 4px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        font-family: "Roboto", sans-serif;
+        animation: pulse 2s infinite;
+      }
+
+      .promo-button:hover {
+        background-color: #ff6b81;
+        transform: scale(1.05);
+        animation: none;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
+        }
+
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 10px rgba(255, 71, 87, 0);
+        }
+
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
+        }
+      }
+
+      .content {
+        margin-top: 80px;
+        padding: 20px;
+      }
+
+      .carousel {
+        margin-top: 2rem;
+      }
+
+      .nav-buttons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/bienvenida">Inicio</a></li>
+        <li><a href="/reservas-bogota">Bogotá</a></li>
+        <li><a href="/reservas-cali">Cali</a></li>
+        <li><a href="/reservas-medellin">Medellín</a></li>
+      </ul>
+      <div class="nav-buttons">
+        <a href="/promociones" class="promo-button">🔥 PROMOCIONES 🔥</a>
+        <a href="/auth/logout">Cerrar Sesión</a>
+      </div>
+    </nav>
+
+    <div class="content">
+      <div class="carousel">
+        <div class="carousel__item">
+          <img src="/images/bogota.jpeg" alt="Hotel Bogotá" />
+          <h2>¡Haz tu reserva aquí! Hotel la Calera Bogotá Colombia</h2>
+          <a href="/reservas-bogota" class="button-link">Reservar</a>
+        </div>
+
+        <div class="carousel__item">
+          <img src="/images/cali.jpeg" alt="Hotel Cali" />
+          <h2>¡Haz tu reserva aquí! Hotel Caña Dulce Cali</h2>
+          <a href="/reservas-cali" class="button-link">Reservar</a>
+        </div>
+
+        <div class="carousel__item">
+          <img src="/images/medellin.jpeg" alt="Hotel Medellín" />
+          <h2>¡Haz tu reserva aquí! Hotel El Peñol Medellín</h2>
+          <a href="/reservas-medellin" class="button-link">Reservar</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/carrucel.js"></script>
+  </body>
+</html>
